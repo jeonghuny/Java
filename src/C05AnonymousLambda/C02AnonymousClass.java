@@ -3,10 +3,18 @@ package C05AnonymousLambda;
 import javax.lang.model.element.AnnotationMirror;
 
 // 익명 내부클래스
+// 이름 없는 클래스를 선언함과 동시에
+// 그 클래스의 객체를 바로 생성하는 것
 public class C02AnonymousClass {
     public static void main(String[] args) {
 //        AbstractAnimal을 상속한 클래스가 별도로 존재하지 않고,
-//        내부에서 익명클래스가 만들어짐과 동시에 익명객체가 생성.
+//        내부에서 익명클래스가 만들어짐과 동시에 익명객체가 생성.(컴파일러에 의해 생성)
+
+
+//이름이 없는 내부 클래스
+//→ 클래스 선언 + 객체 생성을 동시에
+//→ 딱 한 번만 사용
+
 //        AbstractAnimal aa = new AbstractAnimal() {
 //            @Override
 //            void makeSound() {
@@ -17,14 +25,16 @@ public class C02AnonymousClass {
 //        aa.eat();
 //
 ////        구현체가 없는 추상클래스 또는 인터페이스는 익명객체로 생성.
+        // a1 은 이름없는 클래스의 객체 -> 익명객체이다.
 //        Animal1 a1 = new Animal1() {
 //            @Override
-//            public void makesound() {
+//            public void makeSound() {
 //            }
 //            @Override
 //            public void eat() {
 //            }
 //        };
+        
 
 //        인터페이스의 익명객체에 구현해야할 메서드가 1개밖에 없을때에는 람다표현식(화살표함수) 사용가능
         Animal2 a2 = () -> {
@@ -45,7 +55,7 @@ public class C02AnonymousClass {
 //         return이 하나 일 경우  {} 생략 가능 return도 생략
         Animal3 a3_2 = (a,b,c) -> a + ", " + b + ", " + c;
 
-        System.out.println(a3_1.makeSound("java","pyhon","C++"));
+        System.out.println(a3_1.makeSound("java","python","C++"));
 
 //        실습)
 //        Animal4인터페이스 생성 및 makeSound메서드 선언 : 매개변수는 String, String, int. 리턴타입은 String
@@ -59,6 +69,7 @@ public class C02AnonymousClass {
             }
         };
         System.out.println(a4_1.makeSound("abc","bcd",20));
+
     }
 }
 
