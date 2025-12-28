@@ -26,7 +26,6 @@ public class C08String {
 //        String st2 = "Hello1";
 //        System.out.println(st1.equals(st2)); // false
 //★        System.out.println(st1.equalsIgnoreCase(st2)); // 대소문자 무시하겠다. true
-
 //        length : 문자열의 길이 출력
 //        String st1 = "hello1 world1 java1";
 //        System.out.println(st1.length());

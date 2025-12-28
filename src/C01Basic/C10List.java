@@ -91,7 +91,7 @@ public class C10List {
 //★        Collections.sort(myList); // 오름차순
 //        Collections.sort(myList, Comparator.reverseOrder()); // 내림차순
 //        System.out.println(myList);
-//        // 둘의 차이 없음 nlong(n)
+//        // 둘의 차이 없음 nlog(n)
 //        myList.sort(Comparator.naturalOrder()); // 오름차순
 //        myList.sort(Comparator.reverseOrder()); // 내림차순
 //        System.out.println(myList);

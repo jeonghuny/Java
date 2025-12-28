@@ -45,6 +45,7 @@ public class C09Array {
 //        avg = (double)sum / arr.length;
 //        System.out.println("총합 : "+ sum + "\n평균 : " + avg);
 
+
 //        배열의 최대값, 최소값
 //        int[] arr = {10,20,30,12,8,17};
 ////        최대값을 구할때는 가장 작은 값을 설정.
@@ -98,7 +99,7 @@ public class C09Array {
 //        선택정렬 알고리즘 구현 (자리는 선택하는 것)
 //        구현로직 : 1) 2중for문을 사용하여 index마다 최소값 찾기 2) 현재위치와 자리 change
 //        int[] arr = {17,12,20,10,15};
-//        내장메서드 시간복잡도 : n*long(n)
+//        내장메서드 시간복잡도 : n*log(n)
 
 
 //        방법1.
@@ -177,15 +178,15 @@ public class C09Array {
 //        System.out.println(index);
 //★        이분탐색(이진검색) - brinary search, 복잡도 log(n) - log2(n) 인거임
 //★        사전에 데이터가 오름차순정렬되어 있는 경우만, 이분탐색 가능
-//        int[] arr = {1,3,6,8,8,9,11,15};
-//        int target = 11;
+        int[] arr = {1,3,6,8,8,9,11,15};
+        int target = 11;
 ////        찾고자 하는 값이 있으면 해당 index리턴
 ////        찾고자 하는 값이 없으면 음수값 리턴
 ////        중복값있으면 정확한 인덱스를 찾지는 못함
-//★        int index = Arrays.binarySearch(arr,target);
-//        int index2 = Arrays.binarySearch(arr,8);
-//        System.out.println(index);
-//        System.out.println(index2);
+        int index = Arrays.binarySearch(arr,target);
+        int index2 = Arrays.binarySearch(arr,8);
+        System.out.println(index);
+        System.out.println(index2);
 
 //        1. 그냥 풀어서 시간초과
 //        2. 이분탐색 써서 통과
