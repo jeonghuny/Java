@@ -60,20 +60,20 @@ public class C13QueueStackDeque {
 //        ArrayList 장점 : 조회성능 빠름. 단점 : 중간 삽입/삭제 성능 저하
 //        LinkedList 장점 : 중간 삽입/삭제 성능 빠름, 단점 : 조회성능 저하
 
-//        LinkedList<Integer> myLinkedList = new LinkedList<>();
-//        long stratTime = System.currentTimeMillis();
-//        for(int i=0; i<1000000; i++){
-//            myLinkedList.add(0,i);
-//        }
-//        long endTime = System.currentTimeMillis();
-//        System.out.println("LinkedList에 중간에 값 add 시에 소요시간 : " + (endTime-stratTime));
-//        ArrayList<Integer> myArrayList = new ArrayList<>();
-//        long stratTime2 = System.currentTimeMillis();
-//        for(int i=0; i<1000000; i++){
-//            myArrayList.add(0,i);
-//        }
-//        long endTime2 = System.currentTimeMillis();
-//        System.out.println("ArrayList에 중간에 값 add 시에 소요시간 : " + (endTime2-stratTime2));
+        LinkedList<Integer> myLinkedList = new LinkedList<>();
+        long stratTime = System.currentTimeMillis();
+        for(int i=0; i<100000; i++){
+            myLinkedList.add(0,i);
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.println("LinkedList에 중간에 값 add 시에 소요시간 : " + (endTime-stratTime));
+        ArrayList<Integer> myArrayList = new ArrayList<>();
+        long stratTime2 = System.currentTimeMillis();
+        for(int i=0; i<100000; i++){
+            myArrayList.add(0,i);
+        }
+        long endTime2 = System.currentTimeMillis();
+        System.out.println("ArrayList에 중간에 값 add 시에 소요시간 : " + (endTime2-stratTime2));
 
 //        관련문제 : 카드2, 요세푸스 문제 0
 
@@ -92,7 +92,7 @@ public class C13QueueStackDeque {
 
 //        우선순위 큐 : 데이터를 poll할때 정렬된 데이터결과값(최소값/최대값) 보장
 //        지속적으로 데이터가 추가/제거되면서 전체데이터가 실시간으로 변경되는 상황에 사용.
-//        pq에서 데이터 하나를 poll : lon(n)
+//        pq에서 데이터 하나를 poll : log(n)
 //        pq에서 전체데이터를 모두 poll : nlog(n)
 //        1) add하고 poll(log(n))
 //        2) add하고 poll(log(n))

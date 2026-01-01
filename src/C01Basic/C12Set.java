@@ -46,5 +46,7 @@ public class C12Set {
 //        s1.removeAll(s2);
 //        System.out.println(s1); // [python, c++]
 
+
+//        12/12 까지 배운 내용
     }
 }

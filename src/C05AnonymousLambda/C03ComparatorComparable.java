@@ -93,20 +93,21 @@ class Person implements Comparable<Person> {
 //        ✔ 익명 클래스 / 람다 주 사용처
 */
 
-
-
 //        기본적인 문자열 정렬일때에는 Comparator커스텀을 하지 않고,
 //        복잡한 자신만의 정렬기준을 가지고 정렬해야 할때 Comparator 익명객체 생성.
-//        ex)문자열의 길이를 기준으로 정렬하되, 문자열의 길이 같은 경우에는 알파벳순으로 정렬
+//        ex)문자열의 길이를 기준
+
+    }
+
+}
+=======
 //        Collections.sort(myList2, new Comparator<String>(){
 //            @Override
 //            public int compare(String o1, String o2) {
 //                if(o1.length()==o2.length()){
 //                    return o1.compareTo(o2);
 //                }
-//                return o1.length() - o2.length();
-//            }
-//        });
+//                return o1.length() - o2
 ////     Collections.sort는 비교 방법을 Comparator에게 위임하고,
 ////     Comparator 안에서는 필요하면 Comparable의 compareTo를 직접 호출해서 재사용한다.
         // 동작 완전히 동일   (코드는 이코드와 완전 동일)
@@ -115,30 +116,14 @@ class Person implements Comparable<Person> {
 //                return o1.compareTo(o2);
 //            }
 //            return o1.length() - o2.length();
-//        });
 
-
-//        System.out.println(myList2);
-
-//        백준 : 단어정렬 - 확인
-
-
-//        배열, 리스트 정렬외에 java의 그외 정렬자료구조
-//        Queue<String> pq = new PriorityQueue<>((o1, o2) -> o1.length()- o2.length());
-
-
-//        백준 : 최대힙 - 확인
-//        백준 : 절대값힙 - 확인
-        
-//        백준 : 선긋기
-        
 //        리스트 안의 배열 정렬
 //        [{4,5},{1,2},{5,0},{3,1}]
 
 //        리스트안의 배열에 1번째 index를 기준으로 오름차순 정렬
 
 //        List<int[]> list = new ArrayList<>();
-//        list.add(new int[]{4,5});
+//      
 //        list.add(new int[]{1,2});
 //        list.add(new int[]{5,0});
 //        list.add(new int[]{3,1});
@@ -214,4 +199,3 @@ class Student implements Comparable<Student>{
         return this.getName().compareTo(o.getName());
     }
 }
-
