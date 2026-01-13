@@ -17,12 +17,16 @@ public class C04Json {
         // Files.readString()
         //👉 파일 전체를 문자열로 한 번에 읽음
         //👉 Jackson은 문자열(JSON) 을 입력으로 받기 때문에 이 과정이 필요
+        // 파싱(역직렬화) : readValue : json -> 객체
+        // 직렬화 : writeValueAsString : 객체 -> json
+
 ////        readString : 문자열 전체를 통째로 read
 //        String st1 = Files.readString(filePath);
 //        System.out.println(st1);
         
-//      JackSon 라이브러리(Spring에는 기본적으로 탑재. java에서는 별도로 추가)의
-//      ObjectMapper클래스를 통한 객체로의 파싱
+//      JackSon 라이브러리(Spring에는 기본적으로 탑재. java에서는 별도로 추가)의 ObjectMapper클래스를 통한 객체로의 파싱
+        // JackSon 관련 자료 다운로드 받아서 썼음.
+
 //        ObjectMapper o1 = new ObjectMapper();
 ////        Map으로 일괄적으로  String, String으로 파싱 (하지만 일반적으로 이렇게 사용 안함)
 ////        Map<String,String> myMap = o1.readValue(st1, Map.class);
@@ -36,7 +40,7 @@ public class C04Json {
         Path filePath = Paths.get("src/C07ExceptionFileParsing/myjson2.json");
         String st1 = Files.readString(filePath);
         ObjectMapper o1 = new ObjectMapper();
-        // JSON을 트리 구조로 파싱
+        // JSON을 트리 구조로 파싱 -> 노드로 이어지는 트리 구조임.
         JsonNode jsonNodes = o1.readTree(st1);
         List<Student> studentList = new ArrayList<>();
         for(JsonNode j : jsonNodes){ // 트리구조의 JsonNode
@@ -49,6 +53,7 @@ public class C04Json {
 //        ObjectMapper o1 = new ObjectMapper(); // ObjectMapper를 통해서 json으로 만듬.
 //        Student s1 = new Student(1,"h1","1","seoul");
 //        String result = o1.writeValueAsString(s1);
+
         // 👉 객체 → JSON 문자열
 //        System.out.println(s1);
 //        System.out.println(result);

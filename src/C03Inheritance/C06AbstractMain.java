@@ -19,7 +19,7 @@ public class C06AbstractMain {
 
     }
 }
-//클래스에 추상메서드가 하나라도 있으면 이 클래스는 추상 클래스가 되고, 클래스 앞에 abstract를 붙여야 함.
+// 클래스에 추상메서드가 하나라도 있으면 이 클래스는 추상 클래스가 되고, 클래스 앞에 abstract를 붙여야 함.
 abstract class AbstractAnimal{
     void makeSound1(){
         System.out.println("동물은 소리를 냅니다.");
@@ -41,5 +41,5 @@ class AbstractDog extends AbstractAnimal{
 
 // final 키워드를 통해 상속 불가한 클래스로 변경.
 final class FinalParents{
-
+    final int a = 10; // a를 상수라고 한다.
 }

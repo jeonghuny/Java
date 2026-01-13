@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public class C04StreamApi {
     public static void main(String[] args) {
-//        int[] arr = {20,10,4,12};
+        int[] arr = {20,10,4,12};
 ////        전통적인 방식의 데이터 접근방법 : 메모리주소접근
 //        for(int i=0; i<arr.length; i++){
 //            System.out.println(arr[i]);
@@ -14,7 +14,13 @@ public class C04StreamApi {
 
 //        함수형 프로그래밍 방식 : 데이터와 객체 중심이 아닌 입력에 따른 출력(연산작업포함)만 존재하는 코딩스타일
 //        streamApi : java에서 함수형프로그래밍을 지원하는 라이브러리
-//        Arrays.stream(arr).forEach(a -> System.out.println(a));
+        // 함수형프로그램 ? :
+        // StreamApi :
+/*
+
+
+ */
+        Arrays.stream(arr).forEach(a -> System.out.println(a));
         // stream이라는 객체가 만들어짐
         // 그 객체는 forEach라는 함수가 있음
         // foreach는 스트림의 각 요소를 하나씩 소모하면서 동작을 수행
@@ -60,11 +66,12 @@ public class C04StreamApi {
 
 //        mapToInt : intStream형태로 변환해주는 map
 //        String[] strArr = {"java","python","c++"};
-//        // a->a.length() 하면서 Stream<String> 이 Stream<Integer>가 필요하게됨?
+//        // a->a.length() 하면서 Stream<String> 이 Stream<Integer>가 필요하게됨
 //        int totalLength = Arrays.stream(strArr).mapToInt(a->a.length()).sum();
+          // mapToInt를 통해서 IntStream이 됨
 //        System.out.println(totalLength); // 13
 
-        int[] arr = {1,2,3,4,5,6};
+//        int[] arr = {1,2,3,4,5,6};
 ////        실습 1) arr에서 홀수만 담은 배열을 생성 후 배열 출력
 //        int[] answer = Arrays.stream(arr).filter(a->a%2!=0).toArray();
 //        System.out.println(Arrays.toString(answer));
@@ -80,9 +87,10 @@ public class C04StreamApi {
 ////   stream의 소모 : foreach(출력), sum(합계), count, max, min, reduce(누적연산), findFirst(스트림의 첫번째값 리턴)
 //        int[] intArr = {10,20,30,40};
 //        Arrays.stream(intArr).forEach(a-> System.out.println(a));
-//        int total = Arrays.stream(intArr).sum();
+//        int total = Arrays.stream(intArr).sum(); 
 //        long count = Arrays.stream(intArr).count(); // count는 long
 //        System.out.println(total + " " + count);
+        
 //       optional객체 : 값을 있을수도 있고, 없을수도 있음을 명시한 객체
 //        int max = Arrays.stream(intArr).max().getAsInt();
 //        System.out.println(max);
@@ -128,7 +136,9 @@ public class C04StreamApi {
 ////        형식-"클래스명::메서드명", 조건-하나의 메서드만(실행문)을 호출하는 경우
 //        Arrays.stream(stArr).forEach(a-> System.out.println(a));
 //        Arrays.stream(stArr).forEach(System.out::println);
+        
 //        String[] answer2 = Arrays.stream(stArr). filter(a->a.length()>=5).toArray(String[] :: new);
+//        String[] answer2 = Arrays.stream(stArr). filter(a->a.length()>=5).toArray(a->String(a));        
 //
 //        List<Student> myList = new ArrayList<>();
 //        myList.add(new Student("kim",20));
@@ -145,8 +155,7 @@ public class C04StreamApi {
 //        String[] arr = myList.stream().filter(a->a.getAge()>=30).map(a->a.getName()).toArray(a->new String[a]);
 //        System.out.println("--------------------------------------");
 
-
-
+        
 //        Optional객체 : 특정객체에 값이 없을지도(null) 모른다는 것을 명시적으로 표현한 객체
 //        Spring에서는 매우 빈번함
 //        String st1 = null;
@@ -170,9 +179,13 @@ public class C04StreamApi {
         // opt2_2처럼 값이 있을 수도 없을 수도 있었음. ofNullable()
         Optional<String> opt2_2 = Optional.ofNullable("hello"); // 값이 있는 optional객체 생성
         Optional<String> opt3 = Optional.of("hello"); // 값이 있는 optional객체 생성
-
+        
+        // 예외(에러) : 코드 중단
+        // 1.예외 강제 발생 : 더이상 진행되며 안되기 때문
+        // 2.예외 처리 : 사용자에게 적절한 메세지
+        
 //        Optional객체 처리 방법 4가지
-//        방법1. isPresent()로 확인후에 get()
+//        방법1. isPresent()로 확인후에 get() - 2번째로 많이 사용
 //        if(opt2_2.isPresent()){
 //            System.out.println(opt2_2.get());
 //        }else{
@@ -230,3 +243,7 @@ public class C04StreamApi {
 //        System.out.println(s1.orElseThrow(()-> new NoSuchElementException("없는 회원입니다.")));
     }
 }
+
+// 서버에서는 사용자가 보낸 내용 파싱 -> 객체로 바꿈
+// 파싱 자체가 사용자 request를 처리 (Controller) -> Service에서 핵심로직 수행 , 검증, 예외강제 발생
+// Controller 에서 try Catch를 해서 response 처리 -> 사용자에게 예외처리 응답

@@ -17,6 +17,7 @@ public class C05HttpJsonParsing {
 //        외부 api요청을 하기 위한 라이브러리 : HttpClient, RestTemplate, RestClient
 //        HttpClient는 java내장클래스
 //        RestTemplate, RestClient는 스프링에서 가장 많이 사용하는 클래스.  (외부서버에 요청하는 라이브러리)
+
         // 외부 API 호출 (HttpClient)
         HttpClient client2 = HttpClient.newHttpClient();
         // 요청 정보 (URL, GET/POST 등)

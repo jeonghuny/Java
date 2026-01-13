@@ -26,6 +26,14 @@ public class C03File {
 //        }
 
 //        파일에서 읽기 : NIO패키지 / 속도 NIO > IO / 쓰레드 blocking은 IO 쓰레드safe
+         // Non-blocking 의 약자 N
+        // 비동기적으로 움직임.
+
+        // synchronized -> 다른 스레드의 실행 막는것. => 성능저하
+//        StringBuffer -> synchronized
+//        StringBuilder
+
+
 //        Path filePath = Paths.get("src/C07ExceptionFileParsing/text.txt");
 ////        readString : 문자열 전체를 통째로 read
 //        String st1 = Files.readString(filePath);

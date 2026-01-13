@@ -8,8 +8,7 @@ import java.util.Scanner;
 
 public class C02ExceptionAdvance {
     public static void main(String[] args) {
-//
-////        의도된 예외 강제 발생 : 특정 시점에 프로그램을 강제 중지시키기 위한 목적
+//        의도된 예외 강제 발생 : 특정 시점에 프로그램을 강제 중지시키기 위한 목적
         Scanner sc = new Scanner(System.in);
         System.out.println("이메일을 입력해주세요.");
         String email = sc.nextLine();
@@ -23,6 +22,16 @@ public class C02ExceptionAdvance {
             System.out.println(e.getMessage());
             return;
         }
+
+        // 1. 예외강제 발생 -> 적절한 예외처리
+
+        //checked : 예외처리 강제 -> 네트워크통신, DB접근, 파일처리
+        //checked -> try catch unchecked throw new -> try catch
+        
+        //unchecked :
+
+
+
 
 
 //        checked exception의 처리방법
@@ -43,7 +52,7 @@ public class C02ExceptionAdvance {
         // Service는 IOException을 비즈니스 실패(RuntimeException)로 선언한다.
 
 
-////        방법3. checked예외를 try/catch하여 unchecked 예외 강제발생.(DB롤백을 목적)
+////        방법3. checked예외를 try/catch하여 unchecked 예외 강제발생.(DB롤백을 목적)  // 스프링에서 다시 설명
         //       (DB 롤백을 목적으로 이렇게 처리함)
         try {
             String text = fileRead("src/C07ExceptionFileParsing/test.txt");
@@ -63,6 +72,7 @@ public class C02ExceptionAdvance {
         try {
             text = Files.readString(filePath);
         } catch (IOException e) {
+            // 쳌드 예외를 언첵드예외로 보내버림
             throw new RuntimeException(e);
         }
         return text;
